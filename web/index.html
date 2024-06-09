@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Meter</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <script>
+    var serviceWorkerVersion = "{{flutter_service_worker_version}}";
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=' + serviceWorkerVersion);
+      });
+    }
+
+    FlutterLoader.load({
+      entrypoint: "main.dart.js"
+    });
+  </script>
+</body>
+</html>
